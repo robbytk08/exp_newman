@@ -20,6 +20,8 @@ jobs:
 
     - name: Install Dependencies
       run: npm install -g newman
+      
+    - name: Install report
       run: npm install -g newman-reporter-html
 
     - name: Run Newman
