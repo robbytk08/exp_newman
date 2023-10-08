@@ -22,4 +22,10 @@ jobs:
       run: npm install -g newman
 
     - name: Run Newman
-      run: newman run NBA.postman_collection.json -e QA.postman_environment.json
+      run: newman run NBA.postman_collection.json -e QA.postman_environment.json --reporters html --reporter-html-export report/report.html
+
+    - name: Archive Newman HTML Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: newman-html-report
+        path: report/report.html
