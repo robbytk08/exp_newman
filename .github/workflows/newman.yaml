@@ -20,6 +20,7 @@ jobs:
 
     - name: Install Dependencies
       run: npm install -g newman
+      run: npm install -g newman-reporter-html
 
     - name: Run Newman
       run: newman run NBA.postman_collection.json -e QA.postman_environment.json --reporters html --reporter-html-export report.html
